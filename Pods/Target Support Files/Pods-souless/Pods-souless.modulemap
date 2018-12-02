@@ -1,0 +1,6 @@
+framework module Pods_souless {
+  umbrella header "Pods-souless-umbrella.h"
+
+  export *
+  module * { export * }
+}

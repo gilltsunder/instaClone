@@ -5,6 +5,36 @@
 	<key>logFormatVersion</key>
 	<integer>9</integer>
 	<key>logs</key>
-	<dict/>
+	<dict>
+		<key>8907548D-2047-4072-B4E8-7C5365861FE7</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>8907548D-2047-4072-B4E8-7C5365861FE7.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>W</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>souless project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>souless</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build souless</string>
+			<key>timeStartedRecording</key>
+			<real>565443073.40704095</real>
+			<key>timeStoppedRecording</key>
+			<real>565443078.94076598</real>
+			<key>title</key>
+			<string>Build souless</string>
+			<key>uniqueIdentifier</key>
+			<string>8907548D-2047-4072-B4E8-7C5365861FE7</string>
+		</dict>
+	</dict>
 </dict>
 </plist>
