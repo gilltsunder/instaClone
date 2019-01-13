@@ -34,7 +34,6 @@ class AuthService {
             let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOF_REF).child("profile_image").child(uid!)
             _ = storageRef.putData(imageData, metadata: nil, completion: { (metadata, error) in
                 guard metadata != nil else {
-            
                     return
                 }
                 

@@ -1,23 +1,126 @@
 ### Swift dependencies file v0 ###
 provides-top-level:
 - "UserMessageData"
+- "currentMessages"
 provides-nominal:
 - "7souless15UserMessageDataC"
+- "7souless15currentMessagesC"
 provides-member:
 - ["7souless15UserMessageDataC", ""]
+- ["7souless15currentMessagesC", ""]
 provides-dynamic-lookup:
 depends-top-level:
 - "AssignmentPrecedence"
+- !private "FloatLiteralType"
+- !private "IntegerLiteralType"
+- "NSNumber"
+- "NSObject"
 - "String"
+- !private "StringLiteralType"
 - "UserMessageData"
+- "currentMessages"
 depends-member:
+- ["s7CVarArgP", ""]
+- !private ["s7CVarArgP", "fromId"]
+- !private ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "text"]
+- !private ["s7CVarArgP", "timestamp"]
+- !private ["s7CVarArgP", "toId"]
+- ["s28CustomDebugStringConvertibleP", ""]
+- !private ["s28CustomDebugStringConvertibleP", "fromId"]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "text"]
+- !private ["s28CustomDebugStringConvertibleP", "timestamp"]
+- !private ["s28CustomDebugStringConvertibleP", "toId"]
+- !private ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "init"]
+- ["s23CustomStringConvertibleP", ""]
+- !private ["s23CustomStringConvertibleP", "fromId"]
+- !private ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "text"]
+- !private ["s23CustomStringConvertibleP", "timestamp"]
+- !private ["s23CustomStringConvertibleP", "toId"]
+- ["SQ", ""]
+- !private ["SQ", "fromId"]
+- !private ["SQ", "init"]
+- !private ["SQ", "text"]
+- !private ["SQ", "timestamp"]
+- !private ["SQ", "toId"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s26ExpressibleByStringLiteralP", "init"]
+- !private ["s26ExpressibleByStringLiteralP", "init"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- ["SH", ""]
+- !private ["SH", "fromId"]
+- !private ["SH", "init"]
+- !private ["SH", "text"]
+- !private ["SH", "timestamp"]
+- !private ["SH", "toId"]
+- ["So8NSObjectC", "NSNumber"]
+- ["So8NSObjectC", "String"]
+- ["So8NSObjectC", ""]
+- ["So8NSObjectC", "fromId"]
+- ["So8NSObjectC", "init"]
+- ["So8NSObjectC", "text"]
+- ["So8NSObjectC", "timestamp"]
+- ["So8NSObjectC", "toId"]
+- ["So8NSObjectP", ""]
+- !private ["So8NSObjectP", "fromId"]
+- !private ["So8NSObjectP", "init"]
+- !private ["So8NSObjectP", "text"]
+- !private ["So8NSObjectP", "timestamp"]
+- !private ["So8NSObjectP", "toId"]
+- !private ["s12StaticStringV", "init"]
+- !private ["s12StaticStringV", "init"]
 - ["7souless15UserMessageDataC", "String"]
 - ["7souless15UserMessageDataC", "init"]
 - ["7souless15UserMessageDataC", "userEmail"]
+- ["7souless15UserMessageDataC", "userId"]
 - ["7souless15UserMessageDataC", "userImage"]
 - ["7souless15UserMessageDataC", "userName"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- ["10Foundation27_KeyValueCodingAndObservingP", ""]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "fromId"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "text"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "timestamp"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "toId"]
+- ["7souless15currentMessagesC", "NSNumber"]
+- ["7souless15currentMessagesC", "String"]
+- ["7souless15currentMessagesC", "deinit"]
+- ["7souless15currentMessagesC", "fromId"]
+- ["7souless15currentMessagesC", "init"]
+- ["7souless15currentMessagesC", "text"]
+- ["7souless15currentMessagesC", "timestamp"]
+- ["7souless15currentMessagesC", "toId"]
 depends-nominal:
+- "s7CVarArgP"
+- "s28CustomDebugStringConvertibleP"
+- !private "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- "SQ"
+- !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- !private "s26ExpressibleByStringLiteralP"
+- !private "s33ExpressibleByUnicodeScalarLiteralP"
+- "SH"
+- "So8NSObjectC"
+- "So8NSObjectP"
+- !private "s12StaticStringV"
 - "7souless15UserMessageDataC"
+- !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- !private "s34_ExpressibleByBuiltinStringLiteralP"
+- !private "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- "10Foundation27_KeyValueCodingAndObservingP"
+- "7souless15currentMessagesC"
 depends-dynamic-lookup:
 depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.apinotesc"
@@ -125,4 +228,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.1.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.1.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
-interface-hash: "74b956c6043ee48dd9aec02abdfe27c0"
+interface-hash: "a0f8b79878b997e15f4a70da1fea201a"

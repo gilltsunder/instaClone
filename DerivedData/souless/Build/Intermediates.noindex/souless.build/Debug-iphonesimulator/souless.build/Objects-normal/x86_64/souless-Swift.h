@@ -165,6 +165,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_feature(modules)
 @import CoreGraphics;
 @import Foundation;
+@import ObjectiveC;
 @import UIKit;
 #endif
 
@@ -182,6 +183,16 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma clang attribute push(__attribute__((external_source_symbol(language="Swift", defined_in="souless",generated_declaration))), apply_to=any(function,enum,objc_interface,objc_category,objc_protocol))
 # pragma pop_macro("any")
 #endif
+
+@class NSBundle;
+@class NSCoder;
+
+SWIFT_CLASS("_TtC7souless8Activity")
+@interface Activity : UIViewController
+- (void)viewDidLoad;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
 
 @class UIWindow;
 @class UIApplication;
@@ -204,8 +215,6 @@ SWIFT_CLASS("_TtC7souless11AppDelegate")
 @class UIImageView;
 @class UITouch;
 @class UIEvent;
-@class NSBundle;
-@class NSCoder;
 
 SWIFT_CLASS("_TtC7souless10CameraView")
 @interface CameraView : UIViewController
@@ -228,6 +237,20 @@ SWIFT_CLASS("_TtC7souless10CameraView")
 @interface CameraView (SWIFT_EXTENSION(souless)) <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 - (void)imagePickerController:(UIImagePickerController * _Nonnull)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey, id> * _Nonnull)info;
 @end
+
+@class UITextField;
+
+SWIFT_CLASS("_TtC7souless17ChatLogController")
+@interface ChatLogController : UIViewController
+@property (nonatomic, weak) IBOutlet UITextField * _Null_unspecified textView;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified sendButton;
+- (void)viewDidLoad;
+- (void)handleSend;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 
 @class UITableView;
 
@@ -257,11 +280,9 @@ SWIFT_CLASS("_TtC7souless8MainView")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class UILabel;
 
-SWIFT_CLASS("_TtC7souless11MessageView")
-@interface MessageView : UIViewController
-@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified label;
+SWIFT_CLASS("_TtC7souless17MessageController")
+@interface MessageController : UIViewController
 @property (nonatomic, weak) IBOutlet UITableView * _Null_unspecified tableView;
 - (void)viewDidLoad;
 - (IBAction)returnButton:(id _Nonnull)sender;
@@ -270,11 +291,28 @@ SWIFT_CLASS("_TtC7souless11MessageView")
 @end
 
 
-@interface MessageView (SWIFT_EXTENSION(souless)) <UITableViewDataSource, UITableViewDelegate>
+@interface MessageController (SWIFT_EXTENSION(souless)) <UITableViewDataSource, UITableViewDelegate>
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 @end
 
+
+SWIFT_CLASS("_TtC7souless10NewMessage")
+@interface NewMessage : UIViewController
+@property (nonatomic, weak) IBOutlet UITableView * _Null_unspecified tableView;
+- (void)viewDidLoad;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface NewMessage (SWIFT_EXTENSION(souless)) <UITableViewDataSource, UITableViewDelegate>
+- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (void)tableView:(UITableView * _Nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+@end
+
+@class UILabel;
 
 SWIFT_CLASS("_TtC7souless12PostViewCell")
 @interface PostViewCell : UITableViewCell
@@ -299,7 +337,6 @@ SWIFT_CLASS("_TtC7souless11ProfileView")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class UITextField;
 
 SWIFT_CLASS("_TtC7souless10SignInView")
 @interface SignInView : UIViewController
@@ -336,6 +373,25 @@ SWIFT_CLASS("_TtC7souless10SignUpView")
 
 @interface SignUpView (SWIFT_EXTENSION(souless)) <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 - (void)imagePickerController:(UIImagePickerController * _Nonnull)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey, id> * _Nonnull)info;
+@end
+
+
+SWIFT_CLASS("_TtC7souless9UsersCell")
+@interface UsersCell : UITableViewCell
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified userImage;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified userEmail;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified username;
+- (void)awakeFromNib;
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated;
+- (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER SWIFT_AVAILABILITY(ios,introduced=3.0);
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC7souless15currentMessages")
+@interface currentMessages : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
 @end
 
 #if __has_attribute(external_source_symbol)

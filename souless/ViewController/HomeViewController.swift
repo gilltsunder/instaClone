@@ -2,6 +2,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseStorage
 import FirebaseDatabase
+import Kingfisher
 
 
 class HomeViewController: UIViewController {
@@ -18,15 +19,18 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //
+        let nib = UINib(nibName: "PostViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "CustomPostCell")
+        //
+        
         loadPosts()
-        DispatchQueue.main.async {
-            _ = UIView(frame: .zero)
-        }        
+        
         
     }
     func loadPosts() {
         Database.database().reference().child("posts").observe(.childAdded) { (snapshot) in
-            print(Thread.isMainThread)
             if let dict = snapshot.value as? [String: Any] {
                 let captionText = dict["caption"] as! String
                 let photoUrlString = dict["photoUrl"] as! String
@@ -34,7 +38,6 @@ class HomeViewController: UIViewController {
                 let userName = dict["userName"] as! String
                 let post = Posts(captionText: captionText, photoUrlString: photoUrlString, userName: userName, profileImageUrl: profileImageUrl)
                 self.posts.append(post)
-                print(self.posts)
                 self.tableView.reloadData()
             }
         }
@@ -53,7 +56,7 @@ class HomeViewController: UIViewController {
     
     
     @IBAction func massageButton(_ sender: Any) {
-        print("go")
+        
     }
 }
 
@@ -66,55 +69,19 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = Bundle.main.loadNibNamed("PostViewCell", owner: self, options: nil)?.first as! PostViewCell
+        
+        guard let cell: PostViewCell = self.tableView.dequeueReusableCell(withIdentifier: "CustomPostCell")  as? PostViewCell else {
+            fatalError()
+        }
+        
         let post = posts[indexPath.row]
         let postUrl = URL(string: post.photoUrl!)
-        DispatchQueue.global().async {
-            do{
-                let data = try Data(contentsOf: postUrl!)
-                DispatchQueue.main.sync {
-                    cell.postImageView.image = UIImage(data: data)
-                }
-            } catch {
-            }}
-        let profileImgUrl = URL(string: post.profileImage!)
-        DispatchQueue.global().async {
-            do{
-                let data = try Data(contentsOf: profileImgUrl!)
-                DispatchQueue.main.sync {
-                    cell.userImage.image = UIImage(data: data)
-                }
-            } catch {
-            }}
+        let userUrl = URL(string: post.profileImage!)
         
+        cell.userImage.kf.setImage(with: userUrl)
+        cell.postImageView.kf.setImage(with: postUrl)
         cell.userName.text = posts[indexPath.row].user
         cell.captionLabel.text = "\(posts[indexPath.row].user!): \(posts[indexPath.row].caption)"
         return cell
     }
 }
-
-// работающая версия отображения ячейки c URLфото
-//extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return  posts.count
-//    }
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath)
-//        let post = posts[indexPath.row]
-//        cell.textLabel?.text = posts[indexPath.row].caption
-//
-//        let url = URL(string: post.photoUrl!)
-//        DispatchQueue.global().async {
-//            do{
-//                let data = try Data(contentsOf: url!)
-//                DispatchQueue.main.sync {
-//                    cell.imageView!.image = UIImage(data: data)
-//                }
-//            } catch {
-//            }}
-//        return cell
-//    }
-//}
-
-
-

@@ -6,7 +6,7 @@
 	<integer>9</integer>
 	<key>logs</key>
 	<dict>
-		<key>8907548D-2047-4072-B4E8-7C5365861FE7</key>
+		<key>3F7A1F70-B16A-462A-BA2A-C85DB8862900</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -15,9 +15,9 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>8907548D-2047-4072-B4E8-7C5365861FE7.xcactivitylog</string>
+			<string>3F7A1F70-B16A-462A-BA2A-C85DB8862900.xcactivitylog</string>
 			<key>highLevelStatus</key>
-			<string>W</string>
+			<string>S</string>
 			<key>schemeIdentifier-containerName</key>
 			<string>souless project</string>
 			<key>schemeIdentifier-schemeName</key>
@@ -27,13 +27,13 @@
 			<key>signature</key>
 			<string>Build souless</string>
 			<key>timeStartedRecording</key>
-			<real>565443073.40704095</real>
+			<real>567458240.34144902</real>
 			<key>timeStoppedRecording</key>
-			<real>565443078.94076598</real>
+			<real>567458240.74536705</real>
 			<key>title</key>
 			<string>Build souless</string>
 			<key>uniqueIdentifier</key>
-			<string>8907548D-2047-4072-B4E8-7C5365861FE7</string>
+			<string>3F7A1F70-B16A-462A-BA2A-C85DB8862900</string>
 		</dict>
 	</dict>
 </dict>

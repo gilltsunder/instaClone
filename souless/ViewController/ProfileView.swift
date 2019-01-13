@@ -23,8 +23,6 @@ class ProfileView: UIViewController {
         
        checkCurrentUser()
     
-        let url = URL(string: "https://firebasestorage.googleapis.com/v0/b/souless-41edd.appspot.com/o/profile_image%2Fvy6JJS2Gknfilt5kaEHL22Jyqqr1?alt=media&token=c711c373-0549-45f0-abc7-1ed166837465")
-        img.kf.setImage(with: url)
         
     }
     func checkCurrentUser() {
